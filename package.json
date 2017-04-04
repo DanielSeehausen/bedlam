@@ -20,7 +20,16 @@
     "atom": ">=1.13.0 <2.0.0"
   },
   "homepage": "https://github.com/DanielSeehausen/bedlam",
-  "keywords": ["productivity", "bedlam", "activate", "power", "mode", "combo", "explosions", "stephen hawking"],
+  "keywords": [
+    "productivity",
+    "bedlam",
+    "activate",
+    "power",
+    "mode",
+    "combo",
+    "explosions",
+    "stephen hawking"
+  ],
   "license": "MIT",
   "main": "./lib/bedlam",
   "name": "bedlam",
@@ -30,5 +39,5 @@
     "type": "git",
     "url": "https://github.com/DanielSeehausen/bedlam.git"
   },
-  "version": "0.0.0"
+  "version": "0.1.0"
 }
