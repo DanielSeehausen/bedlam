@@ -111,7 +111,7 @@ module.exports =
         title: "Encouragement Interval"
         description: "Frequency of audio samples from Unreal Tournament, Killer Instinct, and other sources"
         type: "integer"
-        default: 15
+        default: 20
         minimum: 1
         maximum: 1000
 
@@ -128,7 +128,7 @@ module.exports =
         type: "number"
         default: 0.5
         minimum: 0.0
-        maximum: 2.0
+        maximum: 1
         order: 2
 
   explosions:

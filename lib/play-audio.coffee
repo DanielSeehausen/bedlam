@@ -21,17 +21,20 @@ module.exports =
     audio.volume = @getConfig "volume"
     audio.play()
 
-  playClip: (clip, vol=1.0) ->
-    #volume (vol) should be used as a modifier to maintain relative levels, not to override user set volume level in the config
+  setModAudioVol: (audio, volMod) ->
+    modVolume = (@getConfig "volume") * volMod
+    audio.volume = if modVolume > 1.0 then 1.0 else modVolume
+
+  playClip: (clip, volMod=1.0) ->
     try
       pathtoaudio = path.join(__dirname, "../audioclips/#{clip}.wav")
     catch e then console.error("No audio clip: ../audioclips/#{clip}.wav found!")
     audio = new Audio(pathtoaudio)
     audio.currentTime = 0
-    audio.volume = (@getConfig "volume") * vol
+    @setModAudioVol(audio, volMod)
     audio.play()
 
-  playRandomAudioClip: (type, vol) ->
+  playRandomAudioClip: (type, volMod=1.0) ->
     switch type
       when 'longP'
         clip = @sampleAndRemove(@remLongPositiveClips)
@@ -39,7 +42,8 @@ module.exports =
         clip = @sampleAndRemove(@remShortPositiveClips)
       when 'neg'
         clip = @sampleAndRemove(@remNegativeClips)
-    if clip then @playClip(clip, vol)
+    if clip
+      @playClip(clip, volMod)
 
   getConfig: (config) ->
     atom.config.get "bedlam.playAudio.#{config}"

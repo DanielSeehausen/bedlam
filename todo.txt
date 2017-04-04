@@ -1,4 +1,5 @@
 ### to do:
+  * do this todo list
   * refactor the avg combo bits for readability in combo-mode.coffee
   * add power setting toggle in config (either fix it at 1 via setting or leave it dynamic)
   * add fade out on number and bar
@@ -13,3 +14,5 @@
   * get the unused explosion functions that fetch the location of the combo counter working as intended (for laptop resolutions and split panes)
   * balance sounds (SH: 'yes' goes up. KI: 'combo-breaker' goes up slightly)
   * change default tab sound to gun, overriding typewriter
+  * update readme
+  * fix volume config
