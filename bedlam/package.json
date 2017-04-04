@@ -1,0 +1,31 @@
+{
+  "name": "bedlam",
+  "main": "./lib/bedlam",
+  "version": "0.0.0",
+  "description": "Embrace bedlam for increased productivity (created on top of Daniel Seehausen's 'bedlam')",
+  "homepage": "https://chouxbe.us",
+  "keywords": ["productivity", "bedlam", "activate", "power", "mode", "combo", "combo mode", "explosion", "handsome"],
+  "activationCommands": {
+    "atom-workspace": "bedlam:toggle"
+  },
+  "repository": "https://github.com/DanielSeehausen/bedlam",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.15.0 <2.0.0"
+  },
+  "author": {
+    "name": "Daniel Seehausen",
+    "email": "danielseehausen@gmail.com",
+    "url": "https://chouxbe.us"
+  },
+  "bugs": {
+    "url": "https://github.com/DanielSeehausen/bedlam/issues"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "lodash.defer": "^4.1.0",
+    "lodash.random": "^3.1.5",
+    "lodash.sample": "^4.2.1",
+    "lodash.throttle": "^4.0.1"
+  }
+}

@@ -1,0 +1,9 @@
+### to do:
+  * refactor the avg combo bits for readability in combo-mode.coffee
+  * add power setting toggle in config (either fix it at 1 via setting or leave it dynamic)
+  * add fade out on number and bar
+  * change power/acc/benchmark to power everywhere (done?)
+  * reference original author and submit pull request for the base stuff
+  * change ludicrous clip to just 'ludicrous'
+  * normalize all audio clips
+  * fix issue where keyboard input sounds aren't running for first couple of clicks

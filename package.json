@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "Daniel Seehausen",
+    "email": "daniel.seehausen@gmail.com",
+    "url": "https://chouxbe.us"
+  },
+  "bugs": {
+    "url": "https://github.com/DanielSeehausen/bedlam/issues"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "lodash.defer": "^4.1.0",
+    "lodash.random": "^3.1.5",
+    "lodash.sample": "^4.2.1",
+    "lodash.throttle": "^4.0.1"
+  },
+  "description": "Activate power mode for increased productivity (built off of Joel Besada's activate-power-mode package)",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/DanielSeehausen/bedlam",
+  "keywords": ["productivity", "bedlam", "activate", "power", "mode", "combo", "explosions", "stephen hawking"],
+  "license": "MIT",
+  "main": "./lib/bedlam",
+  "name": "bedlam",
+  "optionalDependencies": {},
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanielSeehausen/bedlam.git"
+  },
+  "version": "2.0.0"
+}
