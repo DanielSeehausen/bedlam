@@ -16,7 +16,7 @@
   * can be implemented anywhere else as well
 * additional sound effects added
 
-#RECREATED AS BEDLAM -- version reset
+# Recreated as Bedlam -- version reset
 
 ### 1.4.0 2017-03-19
 * Some performance improvements

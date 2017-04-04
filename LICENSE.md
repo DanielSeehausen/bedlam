@@ -1,4 +1,4 @@
-Copyright (c) 2015 Daniel Seehausen
+Copyright (c) 2017 Daniel Seehausen
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -18,3 +18,6 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Based off of Joel Besada's 'activate-power-mode' package, which he kindly
+open sourced. Please see: 'https://github.com/JoelBesada/activate-power-mode'

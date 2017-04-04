@@ -21,7 +21,7 @@ module.exports =
     audio.volume = @getConfig "volume"
     audio.play()
 
-  playClip: (clip, vol=1) ->
+  playClip: (clip, vol=1.0) ->
     #volume (vol) should be used as a modifier to maintain relative levels, not to override user set volume level in the config
     try
       pathtoaudio = path.join(__dirname, "../audioclips/#{clip}.wav")
@@ -40,7 +40,6 @@ module.exports =
       when 'neg'
         clip = @sampleAndRemove(@remNegativeClips)
     if clip then @playClip(clip, vol)
-
 
   getConfig: (config) ->
     atom.config.get "bedlam.playAudio.#{config}"

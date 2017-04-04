@@ -7,3 +7,9 @@
   * change ludicrous clip to just 'ludicrous'
   * normalize all audio clips
   * fix issue where keyboard input sounds aren't running for first couple of clicks
+  * fix audio config to reflect keyboard feedback vs. voices
+    * along with that give option to turn voice off
+  * fix rest of config options for explosions etc.
+  * get the unused explosion functions that fetch the location of the combo counter working as intended (for laptop resolutions and split panes)
+  * balance sounds (SH: 'yes' goes up. KI: 'combo-breaker' goes up slightly)
+  * change default tab sound to gun, overriding typewriter

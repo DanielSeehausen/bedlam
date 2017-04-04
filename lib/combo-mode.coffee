@@ -6,11 +6,11 @@ explosionsCanvas = require "./explosion-canvas"
 audio = require "./play-audio"
 
 module.exports =
-  currentStreak: 0
-  reached: false
-  maxStreakReached: false
-  prevClipPlayedAt: 0
-  clipDelta: 15
+  #TODO these have been encapsulated, remove them?
+  # currentStreak: 0
+  # reached: false
+  # maxStreakReached: false
+  # prevClipPlayedAt: 0
 
   reset: ->
     @container?.parentNode?.removeChild @container
@@ -35,7 +35,6 @@ module.exports =
   setup: (editorElement) ->
     if not @container
       @container = @createElement "streak-container"
-      @container.classList.add "combo-zero"
       @title = @createElement "title", @container
       @title.textContent = "Combo"
       @max = @createElement "max", @container
@@ -46,11 +45,9 @@ module.exports =
       @exclamations = @createElement "exclamations", @container
       @maximumPower = 1.8 # currStreak/avgStreak
       @atMaxPower = false
-
       @avgStreak = @updateAvgStreak()
       @maxStreak = @getMaxStreak()
       @max.textContent = "Max #{@maxStreak}"
-
       @streakTimeoutObserver?.dispose()
       @streakTimeoutObserver = atom.config.observe 'bedlam.comboMode.streakTimeout', (value) =>
         @streakTimeout = value * 1000
@@ -58,9 +55,6 @@ module.exports =
         @debouncedEndStreak?.cancel()
         @debouncedEndStreak = debounce @endStreak.bind(this), @streakTimeout
 
-      @opacityObserver?.dispose()
-      @opacityObserver = atom.config.observe 'bedlam.comboMode.opacity', (value) =>
-        @container?.style.opacity = value
     @exclamations.innerHTML = ''
     editorElement.querySelector(".scroll-view").appendChild @container
     if @currentStreak
@@ -69,7 +63,7 @@ module.exports =
     @renderStreak()
 
   manageEncouragement: ->
-    if (@currentStreak > (@prevClipPlayedAt + @clipDelta))
+    if (@currentStreak > (@prevClipPlayedAt + audio.getConfig("encouragementInterval")))
       b = @getBenchmark()
       switch
         when (b > 1.7)
@@ -94,27 +88,27 @@ module.exports =
     @lastStreak = performance.now()
     @debouncedEndStreak()
     @currentStreak++
-    @container.classList.remove "combo-zero"
-    @manageEncouragement()
+    if audio.getConfig("useEncouragement") then @manageEncouragement()
     if @currentStreak > @maxStreak
       @increaseMaxStreak()
     @showExclamation() if @currentStreak > 0 and @currentStreak % @getConfig("exclamationEvery") is 0
-    if @currentStreak >= @getConfig("activationThreshold") and not @reached
+    if !@reached and @currentStreak >= @getConfig("activationThreshold")
       @reached = true
+      @container.style.opacity = @getConfig("opacity")
       @container.classList.add "reached"
     @refreshStreakBar()
     @renderStreak()
 
   endStreak: ->
     if @currentStreak > 5 then @updateAvgStreak()
-    @manageDerision()
+    if audio.getConfig("useEncouragement") then @manageDerision()
     audio.refreshClips()
     @currentStreak = @prevClipPlayedAt = 0
     if @atMaxPower
       @counter.classList.remove "shimmer"
       @bar.classList.remove "shimmer"
+      @container.style.opacity = 0
     @atMaxPower = @reached = @maxStreakReached = false
-    @container.classList.add "combo-zero"
     @container.classList.remove "reached"
     @renderStreak()
 

@@ -1,9 +1,10 @@
 
 
 
-# Activate Bedlam Mode
+# Bedlam
 
-Built off of Daniel Seehausen's bedlam. Bedlam mode differs in the following ways:
+Built off of Joel Besada's 'activate-power-mode'.
+Bedlam mode differs in the following ways:
 
 ### Bedlam changes
 * avg. streak implemented and displayed
@@ -22,6 +23,7 @@ Built off of Daniel Seehausen's bedlam. Bedlam mode differs in the following way
   * cluster of explosions occurs when the combo css transitions to neon
   * can be implemented anywhere else as well
 * additional sound effects added
+* combo counter only shows once beyond the activation threshold
 
 #
 

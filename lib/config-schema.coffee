@@ -47,9 +47,9 @@ module.exports =
 
       opacity:
         title: "Combo Mode - Opacity"
-        description: "Opacity of the streak counter."
+        description: "Opacity of the streak counter when activated."
         type: "number"
-        default: 0.6
+        default: 0.5
         minimum: 0
         maximum: 1
 
@@ -101,6 +101,20 @@ module.exports =
         ]
         order: 3
 
+      useEncouragement:
+        title: "Enable Verbal Encouragement"
+        description: "'Its for productivity!'."
+        type: "boolean"
+        default: true
+
+      encouragementInterval:
+        title: "Encouragement Interval"
+        description: "Frequency of audio samples from Unreal Tournament, Killer Instinct, and other sources"
+        type: "integer"
+        default: 15
+        minimum: 1
+        maximum: 1000
+
       customAudioclip:
         title: "Play Audio - Path to Audioclip"
         description: "Path to audioclip played at keystroke."
@@ -112,9 +126,9 @@ module.exports =
         title: "Play Audio - Volume"
         description: "Volume of the audio clip played at keystroke."
         type: "number"
-        default: 0.42
+        default: 0.5
         minimum: 0.0
-        maximum: 1.0
+        maximum: 2.0
         order: 2
 
   explosions:

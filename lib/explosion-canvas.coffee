@@ -2,7 +2,7 @@
 # if additional sprites are to be added then a few changes should be made to
 # modularize the sprites and their information so that they can be passed
 # to rendering functions with their own respective dimensions, ticCount, etc.
-
+path = require "path"
 {CompositeDisposable} = require "atom"
 comboMode = require "./combo-mode"
 
@@ -12,8 +12,7 @@ module.exports =
   init: ->
     @resetExplosions()
     @explosionSpriteSheet = new Image()
-    #TODO fix this path
-    @explosionSpriteSheet.src = "../../../../../../Desktop/power-mode-ds-edit/sprites/explosion-sprite.png"
+    @explosionSpriteSheet.src = path.join(__dirname, "../sprites/explosion-sprite.png")
     @spriteWidth = @spriteHeight = 130.5
     @spriteLocs = [[0, 0],     [130.5, 0],     [261, 0],     [391.5, 0],
                    [0, 130.5], [130.5, 130.5], [261, 130.5], [391.5, 130.5],
@@ -119,7 +118,7 @@ module.exports =
   getComboClusterLocs: ->
     #TODO stop using this crap placeholder and swap back to the random loc generator
     # x, y loc of middle of combo counter at full size
-    x = window.innerWidth - 375
+    x = window.innerWidth - 400
     y = 85
     return [[x - 20, y - 15],
             [x + 80, y + 20],
